@@ -282,8 +282,7 @@ img {
 .benefits-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    column-gap: 72px;
+    gap: 72px;
 
 }
 
@@ -403,6 +402,7 @@ img {
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
     border-top: none;
+    box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 
 
 }
@@ -573,6 +573,257 @@ img {
 
 /* Basement */
 
+/* Backdrop */
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(46, 47, 66, 0.40);
+    z-index: 99999999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.box-form-call-back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 288px;
+    min-height: 584px;
+    border-radius: 4px;
+    background-color: #FCFCFC;
+    padding: 72px 16px 24px 16px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    transform: translate(-50%, -50%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #E7E9FC;
+    padding: 0;
+    line-height: 0;
+    top: 24px;
+    right: 24px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.close-icon-call {
+    fill: #2E2F42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button-call:hover .close-icon-call,
+.close-button-call:focus .close-icon-call {
+    fill: #FFFFFF;
+}
+
+.close-button-call:hover,
+.close-button-call:focus {
+    background-color: #404BBF;
+    border: none;
+
+}
+
+.legend-call-beck {
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    color: #2E2F42;
+}
+
+.label {
+    display: block;
+    color: #8E8F99;
+    font-family: "Roboto";
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+}
+
+.call-back-input {
+    width: 256px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 47, 66, 0.40);
+    padding-left: 38px;
+    background-color: transparent;
+    outline: transparent;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.call-back-input:hover,
+.call-back-input:focus {
+    border-color: #4D5AE5;
+}
+
+.call-back-input:hover+.form-call-back-icon,
+.call-back-input:focus+.form-call-back-icon {
+    fill: #4D5AE5;
+}
+
+.call-back-textarea {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    outline: transparent;
+    width: 256px;
+    height: 120px;
+    resize: none;
+    padding: 8px 16px;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.call-back-textarea:hover,
+.call-back-textarea:focus {
+    border-color: #4D5AE5;
+}
+
+.call-back-checkbox {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.button-call-back {
+    display: block;
+    min-width: 169px;
+    height: 56px;
+    padding: 16px 32px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #4D5AE5;
+    color: #FFFFFF;
+    border: 0;
+    margin: 0 auto;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-call-back:hover,
+.button-call-back:focus {
+    background: #404BBF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.box-privacy-politicy {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.box-privacy-politicy .label {
+    line-height: 1.17;
+    margin-bottom: 0;
+}
+
+.call-back-checkbox:checked+.privacy-label>.span-icon-property {
+    background-color: #404BBF;
+    border: none;
+    fill: #F4F4FD;
+}
+
+
+
+.call-back-checkbox:checked+.privacy-label>.span-icon-property>.privacy-icon {
+
+    opacity: 1;
+}
+
+.box-input-call-back {
+    position: relative;
+}
+
+.box-form-comment {
+    margin-bottom: 16px;
+}
+
+.form-call-back-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: #2E2F42;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.box-label-input-call-back {
+    margin-bottom: 8px;
+}
+
+
+
+.privacy-icon {
+    fill: #F4F4FD;
+    line-height: 0;
+    opacity: 0;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.span-icon-property {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    background-color: #FCFCFC;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.privacy-link {
+    margin-left: 6px;
+    color: #4d5ae5;
+}
+/* Backdrop */
+
 @media screen and (max-width:767px){
 /* Header */
 
@@ -604,7 +855,9 @@ img {
 /* Hero */
 
 /* Benefits  */
-
+.benefits-list{
+    row-gap: 72px;
+}
 /* Benefits */
 /* Our team */
 .team-container-list .item{
@@ -612,6 +865,81 @@ img {
 
     /* Our Team */
 }
+
+        /* mobile menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FFF;
+
+            transform: translateX(100%);
+            transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        } 
+
+        .mobile-menu.is-open{
+            transform: translateX(0%);
+        }
+
+
+        .mobile-menu-container{
+            position: relative;
+            padding-top: 72px ;
+        }
+
+        .nav-mobile-list{
+            display: flex;
+            flex-direction: column;
+            gap:40px;
+        }
+        
+        .close-button-call{
+            top: 25px;
+            right: 16px;
+        }
+
+        /* .mobile-close-button-call{
+            position: absolute;
+            top: 25px;
+            right: 16px;
+        } */
+
+        .mobile-navigation{
+            margin-bottom: 168px;
+        }
+
+        .mobile-nav-link {
+            font-size: 36px;
+            font-weight: 700;
+            display: block;
+        }
+
+                .mobile-mail-tell-data{
+                    margin-bottom: 48px;
+                }
+
+        .mobile-mail-tell-data .list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            line-height: 0;
+        }
+
+        .mobile-mail-tell-data-link{
+            font-size: 20px;
+            letter-spacing: 0.02em;
+        }
+
+        .mobile-sochial-media{
+            display: flex;
+                justify-content: space-between;
+                gap: 24px;
+        }
+
+    
+        /* mobile menu */
 }
 
 @media screen and (min-resolution: 192dpi) and (max-width:767px),
@@ -746,13 +1074,145 @@ justify-content: center;
     gap: 24px;
 }
     /* Basement */
+
+    /* Backdrop */
+        .box-form-call-back{
+            max-width: 408px;
+            padding: 72px 25px 24px 23px;
+        }
+
+        .call-back-input{
+            width: 360px;
+        }
+
+        .call-back-textarea{
+            width: 360px;
+        }
+
+
+    /* Backdrop */
+    
+        .mobile-menu{
+            display: none;
+        }
+
+
 }
 
-@media screen and (min-resolution: 192dpi) and (max-width:767px),
-screen and (min-resolution: 2dppx) and (max-width:767px),
-screen and (min-device-pixel-raito: 2) and (max-width:767px){
+@media screen and (min-resolution: 192dpi) and (min-width:768px),
+screen and (min-resolution: 2dppx) and (min-width:768px),
+screen and (min-device-pixel-raito: 2) and (min-width:768px){
     .hero {
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/tablet-bg@2x.jpg);
+    }
+
+}
+
+@media screen and (min-width:1158px) {
+/* Header */
+.container{
+    max-width: 1158px;
+    padding: 0 15px;
+}
+
+.mail-tell-data .list{
+    flex-direction: row;
+    gap: 40px;
+}
+
+.mail-tell-data-link {
+    letter-spacing: 0.02em;
+    font-size: 16px;
+}
+/* Header */
+
+
+    /* Hero */
+
+    .hero {
+        max-width: 1440px;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+        padding: 188px 0;
+    }
+    .heading{
+    font-size: 56px;
+    line-height: 1.07;
+
+    }
+    /* Hero */
+
+    /* Benefits */
+
+    .benefits-list{
+        flex-wrap: nowrap;
+
+    }
+
+    .benefits-list-item{
+        
+    }
+
+    .subtitle-benefits {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        text-align: start;
+    }
+
+    .text-benefits {
+        font-weight: 400;
+
+    }
+
+    .svg-card-benefits{
+        display: flex;
+            background-color: #F4F4FD;
+            border: 1px solid #8E8F99;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            justify-content: center;
+            align-items: center;
+            height: 112px;
+    }
+
+    /* Benefits */
+
+
+    /* Our Portfolio */
+
+    .portfolio-list .item{
+        flex-basis: calc((100% - 48px) / 3);
+    }
+
+    /* Our Portfolio */
+
+    /* Basement */
+
+    .basement-container{
+        gap: 0;
+    }
+
+    .sochial-media-container-footer{
+        margin-left: 120px;
+    }
+
+    .box-form-subscribe{
+        margin-left: 80px;
+    }
+
+    /* Basement */
+
+    /* Backdrop */
+
+
+    /* Backdrop */
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width:1158px),
+screen and (min-resolution: 2dppx) and (min-width:1158px),
+screen and (min-device-pixel-raito: 2) and (min-width:1158px) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/bg@2x.jpg);
     }
 
 }
