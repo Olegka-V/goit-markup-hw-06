@@ -153,21 +153,6 @@ img {
     padding: 24px 0;
 }
 
-.nav-effects {
-    position: relative;
-    color: #404bbf;
-}
-
-.nav-effects::after {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: -1px;
-    width: 48px;
-    height: 4px;
-    background-color: #404BBF;
-    border-radius: 2px;
-}
 
 .link {
     font-weight: 500;
@@ -183,6 +168,22 @@ img {
 .link:hover,
 .link:focus {
     color: #404BBF;
+}
+
+.nav-effects {
+    position: relative;
+    color: #404bbf;
+}
+
+.nav-effects::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -1px;
+    width: 48px;
+    height: 4px;
+    background-color: #404BBF;
+    border-radius: 2px;
 }
 
 .mail-tell-data {
@@ -260,7 +261,7 @@ img {
 
 /* Benefits  */
 .section {
-    padding: 72px 0;
+    padding: 96px 0;
 }
 
 .subtitle-benefits {
@@ -858,6 +859,8 @@ img {
 .benefits-list{
     row-gap: 72px;
 }
+
+
 /* Benefits */
 /* Our team */
 .team-container-list .item{
@@ -880,11 +883,17 @@ img {
         } 
 
         .flex-nav-mobile{
-            height: 85%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            margin-bottom: 48px;
+        }
+
+        .nav-contacts{
+            height:30%;
+            display: flex;
+                flex-direction: column;
+                justify-content: space-between;
         }
 
         .mobile-menu.is-open{
@@ -972,6 +981,7 @@ screen and (min-device-pixel-raito: 2) and (max-width:767px){
 }
 
 @media screen and (min-width:768px) {
+    
 /* Header */
     .container {
         max-width: 768px;
@@ -1133,6 +1143,9 @@ screen and (min-device-pixel-raito: 2) and (min-width:768px){
 }
 
 @media screen and (min-width:1158px) {
+    .section{
+        padding: 120px 0;
+    }
 /* Header */
 .container{
     max-width: 1158px;
@@ -1210,6 +1223,10 @@ screen and (min-device-pixel-raito: 2) and (min-width:768px){
     /* Our Portfolio */
 
     /* Basement */
+
+    .basement{
+        padding: 100px 0;
+    }
 
     .basement-container{
         gap: 0;
